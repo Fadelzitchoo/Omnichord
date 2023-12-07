@@ -7,7 +7,7 @@
     #include <SDL2/SDL_mixer.h>
     #include <fstream>                                  //Biblioteca pra mexer com arquvios
 
-    #include "sdlFunctions.hpp"
+    #include "sdlFunctions.hpp"	
     #include "instrumento.hpp"
     #include "nota.hpp"
     #include "acorde.hpp"
@@ -17,7 +17,7 @@
 
     using namespace std;
 
-    #define SCREEN_WIDTH 1280
+    #define SCREEN_WIDTH 1280	//Especificação do tamnho da tela
     #define SCREEN_HEIGHT 720
 
     int main(){
@@ -33,7 +33,18 @@
 
         bool teclaPressionada = false, OitavaBool = false, rep = false, rec = false, arqLimpo = false, tickFim;
         int notaInt, oitava = 0, tempo = 100, mod = 0, contador = 0;
-        
+	
+	cout << "Digite o tempo: ";			//Definições iniciais
+   	cin >> tempo;
+	cout << "\ndigite a oitava (0 ou 1): ";
+	cin >> oitava;
+	cout << endl;
+
+	if(oitava > 1)
+		oitava = 1;
+	else
+		oitava = 0;
+
         SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO | SDL_INIT_AUDIO); //Inicialiação do SDL
         IMG_Init(IMG_INIT_PNG);
 
@@ -55,7 +66,7 @@
         SDL_Rect PoteRect6 = { 207, 410, 60, 62 };      // Div 3, Parte Baixo
 
         Instrumento instru1;
-        Instrumento instru2(100, 30);
+        Instrumento instru2(100, 30);			//Exemplo de criação de instruments=os
 
         vector<Nota> notas;                             //Vetor de notas, 36 notas, 3 oitavas, 12³
 
@@ -171,6 +182,8 @@
                 }
             }
         }
+
+	cout << "finalização do programa" << endl;
 
         arquivo.close();                                                            //Fecha o arquivo
         destruirTudo(renderer, texture, corpoOmni, Potenciometro, window);          //Desaloca toda a memoria utilizada
