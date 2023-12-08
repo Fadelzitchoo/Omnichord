@@ -2,7 +2,7 @@ Aluno: Felipe Da Silva Fadel
 
 Projeto: Omnichord
 
-Um instrumento similar a um acordeão, mas eletronico. Atraves do C++ uma simulação de como ele funciona foi criada
+O Omnichord é um instrumento eletronico, com ideia similiar a do acordeão. Desenvolvido em c++ 
 "qwertyuio" são teclas referentes a acordes maiores
 "asdfghjkl" são teclas referentes a acordes menores
 "zxcvbnm,." são teclas referentes a acordes com a 7 dominante
@@ -13,6 +13,10 @@ E pode mudar entre duas oitavas atraves do botão enter do numPad
 
 A aplicação foi feita usando a biblioteca SDL e SDL_mixer. Tanto para a parte grafica quanto para parte sonora
 
+Comando pra compilação:
+g++ main.cpp sdlFunctions.cpp instrumento.cpp nota.cpp acorde.cpp major.cpp minor.cpp seventh.cpp -o main -lSDL2 -lSDL2_image -lSDL2_mixer
+
+nescessario instalar a biblioteca SDL2 e SDL_mixer, no linux basta usar "sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev"
 
 
 Link da biblioteca no GitHub (SDL2)
